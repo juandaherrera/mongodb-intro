@@ -1,0 +1,13 @@
+version: '3.9'
+
+services:
+  mongodb: # Podemos poner cualquier nombre aquí
+    image: mongo:5.0
+    ports:
+      - 27017:27017
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=root
+      - MONGO_INITDB_ROOT_PASSWORD=toor
+    volumes:
+      - ./mongo_data:/data/db # Aquí le digo que cualquier cosa que pase en data/db, me la guarde en mi carpeta mongo_data
+  
