@@ -1,0 +1,39 @@
+use('sample_training')
+
+// db.zips.find({ city: 'CLEVELAND' }).count()
+// db.zips.updateMany(
+//     // query
+//     { city: 'CLEVELAND' },
+//     // update => operators
+//     {
+//         $inc: {
+//             pop: 1000
+//         }
+//     }
+// )
+
+// $rename -- renombrar un atributo
+// db.zips.find({ city: 'CLEVELAND' }).count()
+// db.zips.updateMany(
+//     // query
+//     { city: 'CLEVELAND' },
+//     // update => operators
+//     {
+//         $rename: {
+//             myAtrr: "my_data"
+//         }
+//     }
+// )
+
+// $unset - eliminar un atributo
+db.zips.find({ city: 'CLEVELAND' }).count()
+db.zips.updateMany(
+    // query
+    { city: 'CLEVELAND' },
+    // update => operators
+    {
+        $unset: {
+            my_data: ""
+        }
+    }
+)

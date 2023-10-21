@@ -1,0 +1,14 @@
+use('platzi_store')
+
+
+db.products.updateOne(
+    // Para los ids autogenerados por Mongo, debemos pasarlos dentro de la función ObjectId
+    {_id: ObjectId('65340f228e0daafd48522b3c')}, 
+    // change => operators
+    {
+        $inc: {
+            price: 100,
+        }
+    }
+)
+
