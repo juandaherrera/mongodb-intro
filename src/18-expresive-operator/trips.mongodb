@@ -1,0 +1,19 @@
+use('sample_training')
+
+
+// cuantos han iniciado y finalizado su trip en el mismo punto
+db.trips.find({
+    $expr: {
+        $eq: ['$start station id', '$end station id']
+    }
+}).count()
+
+// cuantos han iniciado y finalizado su trip en el mismo punto y la duración
+db.trips.find({
+    $expr: {
+        $and: [
+            { $eq: ['$start station id', '$end station id'] },
+            { $gte:  ['$tripduration', 1200]  }
+        ]
+    }
+}).count()

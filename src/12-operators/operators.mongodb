@@ -1,0 +1,27 @@
+//Operadores:
+
+//$gt (greater than - >)
+//$gte (greater than or equal - >=)
+//$lt (less than - <)
+//$lte (less than or equal - <=)
+
+use("platzi_store")
+
+// Using $gt & $gte
+db.inventory.find({ qty: { $gt: 20 } })
+db.inventory.find({ qty: { $gte: 20 } })
+
+// Using $lt & $lte
+db.inventory.find({ qty: { $lt: 20 } })
+db.inventory.find({ qty: { $lte: 20 } })
+
+// Using both (join)
+
+db.inventory.find({ qty: { $gte: 25, $lte: 35 } })
+
+db.inventory.find({
+    "item.code": { $ne: "123" },
+    qty: { $gte: 20, $lte: 35 } 
+})
+
+
