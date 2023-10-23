@@ -1,0 +1,8 @@
+use('sample_training')
+
+// 1 = ordenar de la A a la Z
+// -1 = ordenar de la Z a la A
+db.zips
+.find({ pop: { $gte: 100 } })
+.sort({ pop: -1 })
+.limit(2)
